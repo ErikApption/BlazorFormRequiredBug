@@ -1,0 +1,20 @@
+﻿@page "/"
+@using BlazorFormRequiredBug.Data
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<EditForm Model="@_object" >
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" @bind-Value="_object.MyCrypticProperty" DisplayName="The non cryptic property" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+    private TestObject _object = new TestObject();
+
+}
